@@ -6,7 +6,7 @@ from langchain_community.vectorstores import Qdrant
 
 embeddings = SentenceTransformerEmbeddings(model_name="NeuML/pubmedbert-base-embeddings")
 
-loader = DirectoryLoader('data/', glob="**/*.pdf", show_progress=True, loader_cls=UnstructuredFileLoader)
+loader = DirectoryLoader('./data/', glob="**/*.pdf", show_progress=True, loader_cls=UnstructuredFileLoader)
 
 documents = loader.load()
 
@@ -22,7 +22,7 @@ qdrant = Qdrant.from_documents(
     embeddings,
     url=url,
     prefer_grpc=False,
-    collection_name="vector_db"
+    collection_name="vector_db2"
 )
 
 print("Vector DB Successfully Created!")

@@ -13,11 +13,11 @@ client = QdrantClient(
 print(client)
 print("##############")
 
-db = Qdrant(client=client, embeddings=embeddings, collection_name="vector_db")
+db = Qdrant(client=client, embeddings=embeddings, collection_name="vector_db2")
 
 print(db)
 print("######")
-query = "What is Metastatic disease?"
+query = "Give details of Mr Parwar Manoj"
 
 docs = db.similarity_search_with_score(query=query, k=2)
 for i in docs:
